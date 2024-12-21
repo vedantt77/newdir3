@@ -32,9 +32,7 @@ export function StartupDetail({ startup }: StartupDetailProps) {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="lg:col-span-3 space-y-6">
             <StartupAbout description={startup.longDescription} />
-          </div>
-
-          <div className="space-y-6">
+            
             <StartupMetrics
               mrr={startup.metrics.mrr}
               launchedIn={startup.metrics.launchedIn}
@@ -43,15 +41,19 @@ export function StartupDetail({ startup }: StartupDetailProps) {
               monetisation={startup.metrics.monetisation}
               commitment={startup.metrics.commitment}
             />
+            
             <StartupContact
               socialLinks={startup.socialLinks}
             />
           </div>
+
+          <div className="space-y-6">
+            <StartupNewsletter />
+          </div>
         </div>
 
-        <div className="mt-12 space-y-12">
+        <div className="mt-12">
           <StartupFeatured />
-          <StartupNewsletter />
         </div>
       </motion.div>
     </div>
